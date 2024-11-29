@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="airtel" class="org.example.Airtel " autowire-candidate="false" init-method="tagLine" destroy-method="signOff"/>
+
+    <bean id = "jio" class="org.example.Jio" autowire-candidate="true" init-method="tagLine" destroy-method="signOff" />
+
+
+    <bean id="mobile" class="org.example.Mobile" scope="prototype" autowire="byType">
+<!--        <property name="sim" ref="airtel"/>-->
+<!--        <constructor-arg ref="jio" />-->
+    </bean>
+
+</beans>
